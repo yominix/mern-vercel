@@ -18,8 +18,8 @@ function App() {
 
   return (
     <div >
-      <button onClick={() => { fetchApi("http://localhost:5000") }}>Frist Fetch Api</button>
-      <button onClick={() => { fetchApi("http://localhost:5000/test") }}>Second Fetch Api</button>
+      <button onClick={() => { fetchApi(process.env.REACT_APP_API_URL) }}>Frist Fetch Api</button>
+      <button onClick={() => { fetchApi(process.env.REACT_APP_API_URL+"test") }}>Second Fetch Api</button>
       <div>Fetch result : {result}</div>
     </div>
   );
