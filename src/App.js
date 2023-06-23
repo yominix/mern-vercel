@@ -5,15 +5,12 @@ function App() {
 
   const [result, setResult] = useState('');
 
-  function fetchApi(url) {
-    
-    fetch(url).then((res) => {
-      console.log(res);
-      return res.json();
-    }).then(res => {
-      console.log(res);
-      setResult(res);
-    });
+  async function fetchApi(url) {
+    const respon = await fetch(url);
+    console.log(respon);
+    const json = await respon.json();
+    console.log(json);
+    setResult(json)
   }
 
   return (
